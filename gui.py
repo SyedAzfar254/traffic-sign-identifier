@@ -4,7 +4,17 @@ from tkinter import *
 from PIL import ImageTk, Image
 
 
-
+def classify(file_path):
+    global label_packed
+    image = Image.open(file_path)
+    image = image.resize((30,30))
+    image = numpy.expand_dims(image, axis=0)
+    image = numpy.array(image)
+    print(image.shape)
+    pred = model.predict_classes([image])[0]
+    sign = classes[pred+1]
+    print(sign)
+    label.configure(foreground='#011638', text=sign) 
 
 
 def upload_image():
