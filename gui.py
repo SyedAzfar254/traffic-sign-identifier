@@ -3,6 +3,11 @@ from tkinter import filedialog
 from tkinter import *
 from PIL import ImageTk, Image
 
+import numpy
+#load the trained model to classify sign
+from keras.models import load_model
+model = load_model('traffic_classifier.h5')
+
 
 def classify(file_path):
     global label_packed
