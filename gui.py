@@ -43,6 +43,8 @@ def classify(file_path):
     print(sign)
     label.configure(foreground='#011638', text=sign) 
 
+def show_classify_button(file_path):
+    classify_b=Button(top,text="Classify Image",command=lambda: classify(file_path),padx=10,pady=5)
 
 def upload_image():
     try:
