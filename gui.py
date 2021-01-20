@@ -36,5 +36,6 @@ def upload_image():
     except:
         pass
 
+
 upload=Button(top,text="Upload an image",command=upload_image,padx=10,pady=5)
 upload.configure(background='#364156', foreground='white',font=('arial',10,'bold'))
