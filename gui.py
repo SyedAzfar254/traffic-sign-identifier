@@ -46,6 +46,7 @@ def classify(file_path):
 def show_classify_button(file_path):
     classify_b=Button(top,text="Classify Image",command=lambda: classify(file_path),padx=10,pady=5)
 
+# Uploading image method
 def upload_image():
     try:
         file_path=filedialog.askopenfilename()
@@ -67,3 +68,7 @@ upload.configure(background='#364156', foreground='white',font=('arial',10,'bold
 upload.pack(side=BOTTOM,pady=50)
 sign_image.pack(side=BOTTOM,expand=True)
 label.pack(side=BOTTOM,expand=True)
+heading = Label(top, text="Know Your Traffic Sign",pady=20, font=('arial',20,'bold'))
+heading.configure(background='#CDCDCD',foreground='#364156')
+heading.pack()
+top.mainloop()
