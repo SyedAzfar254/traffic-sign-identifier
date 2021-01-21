@@ -45,6 +45,8 @@ def classify(file_path):
 
 def show_classify_button(file_path):
     classify_b=Button(top,text="Classify Image",command=lambda: classify(file_path),padx=10,pady=5)
+    classify_b.configure(background='#364156', foreground='white',font=('arial',10,'bold'))
+    classify_b.place(relx=0.79,rely=0.46)
 
 # Uploading image method
 def upload_image():
