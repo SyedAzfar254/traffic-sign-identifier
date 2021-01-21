@@ -29,7 +29,38 @@ classes = { 1:'Speed limit (20km/h)',
            18:'No entry',       
            19:'General caution',     
            20:'Dangerous curve left', 
+           21:'Dangerous curve right',   
+           22:'Double curve',      
+           23:'Bumpy road',     
+           24:'Slippery road',       
+           25:'Road narrows on the right',  
+           26:'Road work',    
+           27:'Traffic signals',      
+           28:'Pedestrians',     
+           29:'Children crossing',     
+           30:'Bicycles crossing',       
+           31:'Beware of ice/snow',
+           32:'Wild animals crossing',      
+           33:'End speed + passing limits',      
+           34:'Turn right ahead',     
+           35:'Turn left ahead',       
+           36:'Ahead only',      
+           37:'Go straight or right',      
+           38:'Go straight or left',      
+           39:'Keep right',     
+           40:'Keep left',      
+           41:'Roundabout mandatory',     
+           42:'End of no passing',      
+           43:'End no passing veh > 3.5 tons' }
+                 
+#initialise GUI
+top=tk.Tk()
+top.geometry('800x600')
+top.title('Traffic sign classification')
+top.configure(background='#CDCDCD')
 
+label=Label(top,background='#CDCDCD', font=('arial',15,'bold'))
+sign_image = Label(top)
 
 def classify(file_path):
     global label_packed
