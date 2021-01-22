@@ -89,3 +89,7 @@ for img in imgs:
 X_test=np.array(data)
 
 pred = model.predict_classes(X_test)
+
+#Accuracy with the test data
+from sklearn.metrics import accuracy_score
+print(accuracy_score(labels, pred))
