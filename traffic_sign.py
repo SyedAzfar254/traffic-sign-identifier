@@ -66,3 +66,26 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 epochs = 15
 history = model.fit(X_train, y_train, batch_size=32, epochs=epochs, validation_data=(X_test, y_test))
 model.save("my_model.h5")
+
+
+
+
+
+#testing accuracy on test dataset
+from sklearn.metrics import accuracy_score
+
+y_test = pd.read_csv('Test.csv')
+
+labels = y_test["ClassId"].values
+imgs = y_test["Path"].values
+
+data=[]
+
+for img in imgs:
+    image = Image.open(img)
+    image = image.resize((30,30))
+    data.append(np.array(image))
+
+X_test=np.array(data)
+
+pred = model.predict_classes(X_test)
