@@ -14,3 +14,19 @@ data = []
 labels = []
 classes = 43
 cur_path = os.getcwd()
+
+#Retrieving the images and their labels 
+for i in range(classes):
+    path = os.path.join(cur_path,'train',str(i))
+    images = os.listdir(path)
+
+    for a in images:
+        try:
+            image = Image.open(path + '\\'+ a)
+            image = image.resize((30,30))
+            image = np.array(image)
+            #sim = Image.fromarray(image)
+            data.append(image)
+            labels.append(i)
+        except:
+            print("Error loading image")
